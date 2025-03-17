@@ -2,12 +2,14 @@ package gimenacio.microservice.entrenadores.controller;
 
 import gimenacio.microservice.entrenadores.model.Entrenador;
 import gimenacio.microservice.entrenadores.service.EntrenadorService;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
+@FeignClient(name = "entrenadores", url = "http://localhost:8085")
 @RestController
 @RequestMapping("/entrenadores")
 public class EntrenadorController {
